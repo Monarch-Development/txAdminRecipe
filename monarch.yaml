@@ -1,0 +1,23 @@
+$engine: 3
+$onesync: on
+name: Monarch Framework
+description: Recipe for Monarch Framework installation and setup
+author: IlMelons
+version: 0.0.1
+
+tasks:
+  ## Default Cfx Resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: master
+    subpath: resources
+    dest: ./resources
+
+  - action: remove_path
+    path: ./resources/[gameplay]/chat
+
+  ## Monarch txAdmin Recipe
+  - action: download_github
+    src: https://github.com/Monarch-Development/txAdminRecipe
+    ref: main
+    dest: .tmp/mnr
