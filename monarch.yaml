@@ -17,7 +17,14 @@ tasks:
     path: ./resources/[gameplay]/chat
 
   ## Monarch txAdmin Recipe
+  - action: download_file
+    src: https://raw.githubusercontent.com/Monarch-Devs/txAdminRecipe/refs/heads/main/cfg/server.cfg
+    path: ./server.cfg
+
   - action: download_github
-    src: https://github.com/Monarch-Development/txAdminRecipe
+    src: https://github.com/Monarch-Devs/mnr_core
     ref: main
-    dest: .tmp/mnr
+    dest: ./resources/[mnr]/
+
+  - action: query_database
+    file: ./resources/[mnr]/mnr_core/mnr_core.sql
